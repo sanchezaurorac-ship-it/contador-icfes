@@ -79,7 +79,7 @@ export default function CountdownTimer() {
     return (
       <div className={styles.timerContainer}>
         <div className={styles.timerHeader}>
-          <h1 className={styles.timerTitle}>Prueba ICFES Saber 11</h1>
+          <h1 className={`${styles.timerTitle} text-gradient`}>Prueba ICFES Saber 11</h1>
           <p className={styles.timerSubtitle}>Cargando cuenta regresiva...</p>
         </div>
         <div className={styles.timerGrid}>

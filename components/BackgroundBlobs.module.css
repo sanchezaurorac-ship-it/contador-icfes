@@ -7,22 +7,81 @@
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(39, 39, 42, 0.6) 0%, #09090b 70%);
+  /* Warm deep background base */
+  background: #0d0b08;
 }
 
-/* No blobs — clean minimal background */
+/* Warm ambient glow — top center, like a desk lamp */
+.container::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(232, 168, 56, 0.07) 0%, rgba(249, 115, 22, 0.03) 40%, transparent 70%);
+  border-radius: 50%;
+  animation: ambientPulse 12s ease-in-out infinite alternate;
+}
+
+/* Subtle warm glow bottom-right for depth */
+.container::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: -10%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(101, 168, 130, 0.05) 0%, transparent 65%);
+  border-radius: 50%;
+  animation: ambientPulse 18s ease-in-out infinite alternate-reverse;
+}
+
 .blob {
-  display: none;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
+/* Warm amber blob — top left, subtle */
 .blob1 {
-  display: none;
+  background: radial-gradient(circle, rgba(232, 168, 56, 0.08) 0%, transparent 70%);
+  width: 50vw;
+  height: 50vw;
+  top: -8%;
+  left: -8%;
+  animation: driftBlob 20s ease-in-out infinite alternate;
 }
 
+/* Coral blob — bottom right */
 .blob2 {
-  display: none;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+  width: 45vw;
+  height: 45vw;
+  bottom: -10%;
+  right: -5%;
+  animation: driftBlob 25s ease-in-out infinite alternate-reverse;
 }
 
+/* Sage green blob — center left, calm */
 .blob3 {
-  display: none;
+  background: radial-gradient(circle, rgba(101, 168, 130, 0.05) 0%, transparent 70%);
+  width: 38vw;
+  height: 38vw;
+  top: 40%;
+  left: 10%;
+  animation: driftBlob 30s ease-in-out infinite alternate;
+}
+
+@keyframes driftBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes ambientPulse {
+  0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.08); }
 }

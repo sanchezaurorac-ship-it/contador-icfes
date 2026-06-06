@@ -15,7 +15,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 5rem 1.5rem;
+  padding: 2.5rem 1.5rem 5rem 1.5rem;
   position: relative;
   z-index: 10;
 }
@@ -29,43 +29,64 @@
 }
 
 .logoText {
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--text-highlight);
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+/* Warm amber dot for logo */
 .logoDot {
   width: 8px;
   height: 8px;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   border-radius: 50%;
-  box-shadow: var(--shadow-neon-secondary);
+  box-shadow: 0 0 8px rgba(232, 168, 56, 0.6);
+  animation: pulseLogoDot 3s ease-in-out infinite;
+}
+
+@keyframes pulseLogoDot {
+  0%, 100% { box-shadow: 0 0 6px rgba(232, 168, 56, 0.5); }
+  50% { box-shadow: 0 0 14px rgba(232, 168, 56, 0.85); }
 }
 
 .badgeYear {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.75rem;
+  background: rgba(232, 168, 56, 0.08);
+  border: 1px solid rgba(232, 168, 56, 0.18);
+  color: var(--text-accent);
+  font-size: 0.73rem;
   font-weight: 600;
-  padding: 0.35rem 0.75rem;
+  padding: 0.32rem 0.8rem;
   border-radius: 9999px;
+  letter-spacing: 0.04em;
 }
 
 .countdownWrapper {
   width: 100%;
-  background: rgba(18, 17, 45, 0.25);
-  border: 1px solid var(--border-color);
-  border-radius: 32px;
+  background: rgba(26, 21, 14, 0.35);
+  border: 1px solid rgba(232, 168, 56, 0.09);
+  border-radius: 28px;
   padding: 2.5rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(232, 168, 56, 0.06);
   margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle amber shimmer on countdown header */
+.countdownWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 168, 56, 0.35), transparent);
 }
 
 .dashboardGrid {
@@ -79,8 +100,6 @@
   .dashboardGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Make the first item stretch if there are 3 items on a 2-col grid, or let them flow */
 }
 
 @media (max-width: 768px) {
@@ -94,10 +113,12 @@
   text-align: center;
   padding: 2rem 0;
   color: var(--text-muted);
-  font-size: 0.8rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 0.78rem;
+  border-top: 1px solid rgba(232, 168, 56, 0.06);
   margin-top: auto;
   z-index: 10;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
 .footerLink {
