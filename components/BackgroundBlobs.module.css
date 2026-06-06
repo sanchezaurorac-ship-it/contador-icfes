@@ -1,0 +1,60 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 50%, #0d0c2b 0%, #05050c 100%);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.65;
+  filter: blur(80px);
+}
+
+.blob1 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0) 70%);
+  width: 50vw;
+  height: 50vw;
+  top: -10%;
+  left: -10%;
+  animation: pulseBlob 15s ease-in-out infinite alternate;
+}
+
+.blob2 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(6, 182, 212, 0) 70%);
+  width: 60vw;
+  height: 60vw;
+  bottom: -15%;
+  right: -10%;
+  animation: pulseBlob 20s ease-in-out infinite alternate-reverse;
+}
+
+.blob3 {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0) 70%);
+  width: 40vw;
+  height: 40vw;
+  top: 35%;
+  left: 55%;
+  animation: pulseBlob 18s ease-in-out infinite alternate;
+}
+
+@keyframes pulseBlob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
