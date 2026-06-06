@@ -79,7 +79,7 @@ export default function CountdownTimer() {
     return (
       <div className={styles.timerContainer}>
         <div className={styles.timerHeader}>
-          <h1 className={`${styles.timerTitle} text-gradient`}>Prueba ICFES Saber 11</h1>
+          <h1 className={styles.timerTitle}>Prueba ICFES Saber 11</h1>
           <p className={styles.timerSubtitle}>Cargando cuenta regresiva...</p>
         </div>
         <div className={styles.timerGrid}>
@@ -106,7 +106,7 @@ export default function CountdownTimer() {
   return (
     <div className={styles.timerContainer}>
       <div className={styles.timerHeader}>
-        <h1 className={`${styles.timerTitle} text-gradient`}>El camino al ICFES</h1>
+        <h1 className={styles.timerTitle}>El camino al ICFES</h1>
         <p className={styles.timerSubtitle}>26 de Julio, 2026 • 7:30 AM</p>
       </div>
 

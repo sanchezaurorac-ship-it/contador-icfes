@@ -14,13 +14,14 @@
 }
 
 .title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--text-highlight);
+  letter-spacing: -0.01em;
 }
 
 .contentContainer {
-  margin: 1.5rem 0;
+  margin: 1.25rem 0;
   min-height: 110px;
   display: flex;
   flex-direction: column;
@@ -28,77 +29,80 @@
 }
 
 .tipText {
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1.5;
+  font-size: 0.975rem;
+  font-weight: 400;
+  line-height: 1.6;
   color: var(--text-main);
   font-style: italic;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 0.85rem;
 }
 
 .tipText::before {
-  content: '“';
+  content: '"';
   position: absolute;
   left: -0.25rem;
-  top: -0.5rem;
-  font-size: 2.5rem;
-  color: var(--color-primary);
-  opacity: 0.3;
+  top: -0.4rem;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.12);
   font-family: serif;
+  line-height: 1;
 }
 
 .tagContainer {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-top: 1rem;
   flex-wrap: wrap;
 }
 
 .tag {
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.18rem 0.55rem;
+  border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.06em;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Color-coded tags by subject */
+/* All subject tags use the same neutral minimal style */
 .tag-matematicas {
-  background: rgba(139, 92, 246, 0.1);
-  color: #a78bfa;
-  border-color: rgba(139, 92, 246, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .tag-lectura {
-  background: rgba(6, 182, 212, 0.1);
-  color: #22d3ee;
-  border-color: rgba(6, 182, 212, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .tag-ciencias {
-  background: rgba(16, 185, 129, 0.1);
-  color: #34d399;
-  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .tag-sociales {
-  background: rgba(245, 158, 11, 0.1);
-  color: #fbbf24;
-  border-color: rgba(245, 158, 11, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .tag-ingles {
-  background: rgba(236, 72, 153, 0.1);
-  color: #f472b6;
-  border-color: rgba(236, 72, 153, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .tag-general {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .actions {
@@ -108,13 +112,13 @@
 }
 
 .btnShuffle {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-color);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -122,14 +126,13 @@
 }
 
 .btnShuffle:hover {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: rgba(139, 92, 246, 0.2);
-  color: var(--color-primary);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-main);
 }
 
 .btnShuffle:active {
-  transform: translateY(1px);
+  transform: scale(0.96);
 }
 
 .rotateIcon {
